@@ -28,7 +28,7 @@ function Integrantes() {
             <div className="h-full bg-gray-100 p-8 rounded">
             <img src="/images/janderson.png" alt="Jonathan Hernández" className="w-24 h-24 rounded-full mx-auto" />
               <h2 className="text-xl font-medium title-font text-gray-900">Anderson Carvajal</h2>
-              <p className="text-gray-500">Ingeniero Industrial</p>
+              <p className="text-gray-500">Programador</p>
             </div>
           </div>
         </div>

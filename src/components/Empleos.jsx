@@ -3,57 +3,43 @@ import Oferta from './Oferta';
 import ofertas from '../utils/empleos.json';
 
 const OfertasEmpleo = () => {
-  const [servicioSeleccionado, setServicioSeleccionado] = useState('');
-  const [paisSeleccionado, setPaisSeleccionado] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('');
+  const [selectedService, setSelectedService] = useState(''); // Nuevo estado para el servicio
 
   // Función para filtrar las ofertas
-  const paises = ['USA', 'Germany', 'Canada', 'Australia'];
-  const ofertasFiltradas = ofertas.filter((oferta) => {
-    return (
-      (!servicioSeleccionado || oferta.service === servicioSeleccionado) &&
-      (!paisSeleccionado || paises.includes(oferta.country))
-    );
+  const filteredOfertas = ofertas.filter(oferta => {
+    return oferta.Country.toLowerCase().includes(selectedCountry.toLowerCase()) &&
+           oferta.Service.toLowerCase().includes(selectedService.toLowerCase());
   });
 
-  // Opciones de filtro (basadas en los servicios y países disponibles en el JSON)
-  const opcionesServicios = [...new Set(ofertas.map((oferta) => oferta.service))];
-  const opcionesPaises = [...new Set(ofertas.map((oferta) => oferta.country))];
-
   return (
-    <div className="container mx-auto">
-      {/* Selector de servicio */}
-      <select
-        value={servicioSeleccionado}
-        onChange={(e) => setServicioSeleccionado(e.target.value)}
-        className="mb-4"
-      >
-        <option value="">Todos los servicios</option>
-        {opcionesServicios.map((servicio) => (
-          <option key={servicio} value={servicio}>
-            {servicio}
-          </option>
-        ))}
-      </select>
+    <div>
+      <h2 className='mx-4 text-lg font-bold'>Mas adelante haremos uso de la API de chatgpt o gemini advance para hacer un analisis mas preciso para conectar mejor empresas con los candidatos</h2>
+      <div className="flex mx-auto px-4 mb-3">
+        {/* Input para filtrar por país */}
+        <input
+          type="text"
+          placeholder="Filtrar por país"
+          value={selectedCountry}
+          onChange={(e) => setSelectedCountry(e.target.value)}
+          className="border border-gray-300 p-2 rounded mr-2 flex-grow"
+        />
 
-      {/* Selector de país */}
-      <select
-        value={paisSeleccionado}
-        onChange={(e) => setPaisSeleccionado(e.target.value)}
-        className="mb-4"
-      >
-        <option value="">Todos los países</option>
-        {opcionesPaises.map((pais) => (
-          <option key={pais} value={pais}>
-            {pais}
-          </option>
-        ))}
-      </select>
+        {/* Nuevo input para filtrar por servicio */}
+        <input
+          type="text"
+          placeholder="Filtrar por profesion"
+          value={selectedService}
+          onChange={(e) => setSelectedService(e.target.value)}
+          className="border border-gray-300 p-2 rounded"
+        />
+      </div>
 
-      {/* Lista de ofertas filtradas */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {ofertasFiltradas.map((oferta) => (
-          <Oferta key={oferta.id} oferta={oferta} />
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-4">
+      {/* Mostrar las ofertas filtradas */}
+      {filteredOfertas.map(oferta => (
+        <Oferta key={oferta.id} oferta={oferta} />
+      ))}
       </div>
     </div>
   );
