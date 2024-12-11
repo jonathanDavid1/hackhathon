@@ -20,7 +20,7 @@ function Integrantes() {
           <div className="p-4 md:w-1/4">
             <div className="h-full bg-gray-100 p-8 rounded">
             <img src="/images/giselle.jpg" alt="Jonathan Hernández" className="w-24 h-24 rounded-full mx-auto" />
-              <h2 className="text-xl font-medium title-font text-gray-900">Gisselle Támara</h2>
+              <h2 className="text-xl font-medium title-font text-gray-900">Gisella Imbeth</h2>
               <p className="text-gray-500">Ingeniera en Sistemas</p>
             </div>
           </div>
