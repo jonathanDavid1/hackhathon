@@ -36,8 +36,8 @@ function Integrantes() {
               <h2 className="text-xl font-medium title-font text-gray-900">Yesid Vera</h2>
               <p className="text-gray-500">Abogado</p>
             </div>
-          </div>
-          </div>
+          
+          
         </div>
       </div>
     </section>
