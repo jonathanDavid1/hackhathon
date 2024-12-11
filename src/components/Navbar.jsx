@@ -28,13 +28,13 @@ const Navbar = () => {
               <Link href="/Integrantes" className='text-lavenderPurple'>Integrantes</Link>
             </li>
             <li>
-              <Link href="/servicios" className='text-lavenderPurple'>Patrocinadores</Link>
+              <Link href="/patrocinadores" className='text-lavenderPurple'>Patrocinadores</Link>
             </li>
             <li>
-              <Link href="/sobreNosotros" className='text-lavenderPurple'>Testimonios</Link>
+              <Link href="/testimonios" className='text-lavenderPurple'>Testimonios</Link>
             </li>
             <li>
-              <Link href="/sobreNosotros" className='text-lavenderPurple'>Contacto</Link>
+              <Link href="/contacto" className='text-lavenderPurple'>Contacto</Link>
             </li>
             {/* ... otros enlaces */}
           </ul>
@@ -56,13 +56,13 @@ const Navbar = () => {
               <Link href="/Integrantes">Integrantes</Link>
             </li>
             <li>
-              <Link href="/servicios">Patrocinadores</Link>
+              <Link href="/patrocinadores">Patrocinadores</Link>
             </li>
             <li>
-              <Link href="/sobreNosotros">Testimonios</Link>
+              <Link href="/testimonios">Testimonios</Link>
             </li>
             <li>
-              <Link href="/sobreNosotros">Contacto</Link>
+              <Link href="/contacto">Contacto</Link>
             </li>
             {/* ... otros enlaces */}
           </ul>
